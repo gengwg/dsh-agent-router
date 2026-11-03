@@ -1,0 +1,44 @@
+{
+  "name": "dsh-agent-router",
+  "version": "0.1.0",
+  "description": "Deterministic, inspectable delegation-time model routing for DSH subagents: keyword rules pick the child's provider/model once, when it is spawned.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "src",
+    "cordis.patch.yml"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test tests/*.test.ts tests/*.test.mjs"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "dsh",
+    "deepseek-harness",
+    "subagent",
+    "router",
+    "model-routing"
+  ],
+  "author": "gengwg (https://github.com/gengwg)",
+  "homepage": "https://github.com/gengwg/dsh-agent-router#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gengwg/dsh-agent-router.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gengwg/dsh-agent-router/issues"
+  },
+  "engines": {
+    "node": ">=22.18",
+    "dsh": ">=0.2.1-rc.5 <0.3.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

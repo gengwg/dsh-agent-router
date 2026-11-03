@@ -1,0 +1,27 @@
+name: test
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [22, 24]
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm test
+
+  # Loads the plugin through DSH's real Cordis loader against a pinned harness.
+  loader:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - run: npm install -g @deepseek-ai/dsh@0.2.1-rc.5
+      - run: DSH_NODE_MODULES="$(npm root -g)/@deepseek-ai/dsh/node_modules" npm test
