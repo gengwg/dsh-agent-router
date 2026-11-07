@@ -1,5 +1,7 @@
 # dsh-agent-router
 
+Listed in [Awesome DSH Plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/main/data/plugins/gengwg__dsh-agent-router.yml).
+
 A [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) plugin that
 picks a subagent's provider and model **once, at delegation time**, from a short
 list of keyword rules you write. No classifier, no scoring: the first rule whose
